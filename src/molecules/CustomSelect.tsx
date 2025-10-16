@@ -1,4 +1,7 @@
-import { Button, Label, ListBox, ListBoxItem, Popover, Select, SelectValue } from 'react-aria-components'
+import { Label, ListBox, ListBoxItem, Popover, Select, SelectValue } from 'react-aria-components'
+
+import { CustomButton } from '../atoms/CustomButton'
+
 import { styled } from 'styled-components'
 
 type SelectProps = {
@@ -11,10 +14,10 @@ export function CustomSelect({ label, options }: SelectProps) {
         <StyledSelect>
             <Label>{label}</Label>
 
-            <Button>
+            <CustomButton>
                 <SelectValue />
                 <span aria-hidden="true">▼</span>
-            </Button>
+            </CustomButton>
 
             <Popover>
                 <ListBox>
