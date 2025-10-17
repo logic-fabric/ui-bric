@@ -1,8 +1,10 @@
 import { useRef } from 'react'
 import { useButton } from 'react-aria'
-import type { ButtonProps as RAButtonProps} from 'react-aria-components'
+import type { ButtonProps as RAButtonProps } from 'react-aria-components'
 
 import styled from 'styled-components'
+
+import { buttonStyles } from './atomsStyles'
 
 type ButtonProps = RAButtonProps & {
     children: React.ReactNode
@@ -20,13 +22,7 @@ export function Button(props: ButtonProps) {
 }
 
 const StyledButton = styled.button<{ $isPressed: boolean }>`
-    display: flex;
-    gap: 1em;
-
-    width: fit-content;
-    padding: 0.5em 1em;
-    border-radius: 4px;
+    ${buttonStyles}
 
     background-color: ${({ $isPressed }) => $isPressed ? "#ccc" : "#eee"};
-    cursor: pointer;
 `

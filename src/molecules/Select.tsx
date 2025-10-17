@@ -2,6 +2,8 @@ import { Button as RAButton, Label as RALabel, ListBox as RAListBox, ListBoxItem
 
 import { styled } from 'styled-components'
 
+import { buttonStyles } from '../atoms/atomsStyles'
+
 type SelectProps = {
     label: string,
     options: string[]
@@ -36,15 +38,7 @@ const StyledSelect = styled(RASelect)`
 `
 
 const StyledButton = styled(RAButton)`
-    display: flex;
-    gap: 1em;
-
-    width: fit-content;
-    padding: 0.5em 1em;
-    border-radius: 4px;
-
-    background-color: #eee;
-    cursor: pointer;
+    ${buttonStyles}
 `
 
 const StyledListBoxItem = styled(RAListBoxItem)`
