@@ -2,13 +2,13 @@ import { useRef } from "react"
 import { useLocale, useNumberField } from "react-aria"
 import { useNumberFieldState } from "react-stately"
 
-import { CustomButton } from "../atoms/CustomButton"
+import { Button } from "../atoms/Button"
 
 import styled from "styled-components"
 
 type NumberFieldProps = Parameters<typeof useNumberField>[0]
 
-export function CustomNumberField(props: NumberFieldProps) {
+export function NumberField(props: NumberFieldProps) {
     const inputRef = useRef(null)
     const { locale } = useLocale()
     const state = useNumberFieldState({
@@ -28,11 +28,11 @@ export function CustomNumberField(props: NumberFieldProps) {
             <label {...labelProps} >{props.label}</label>
 
             <StyledInputContainer {...groupProps}>
-                <CustomButton {...decrementButtonProps}>-</CustomButton>
+                <Button {...decrementButtonProps}>-</Button>
 
                 <input {...inputProps} ref={inputRef} />
 
-                <CustomButton {...incrementButtonProps}>+</CustomButton>
+                <Button {...incrementButtonProps}>+</Button>
             </StyledInputContainer>
         </StyledNumberFieldContainer>
     )

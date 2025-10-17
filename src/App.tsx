@@ -1,15 +1,15 @@
-import { CustomButton } from './atoms/CustomButton'
-import { CustomSelect } from './molecules/CustomSelect'
+import { Button } from './atoms/Button'
+import { Select } from './molecules/Select'
 
 import './App.css'
-import { CustomNumberField } from './molecules/CustomNumberField'
+import { NumberField } from './molecules/NumberField'
 
 function App() {
   return (
     <>
-      <CustomButton onPress={() => alert('Button pressé !')}>Cliquez-moi</CustomButton>
+      <Button onPress={() => alert('Button pressé !')}>Cliquez-moi</Button>
 
-      <CustomNumberField
+      <NumberField
         label="Prix"
         defaultValue={49}
         formatOptions={{
@@ -18,7 +18,7 @@ function App() {
         }}
       />
 
-      <CustomSelect label="Animaux favoris" options={['Chat', 'Chien', 'Kangourou']} />
+      <Select label="Animaux favoris" options={['Chat', 'Chien', 'Kangourou']} />
     </>
   )
 }

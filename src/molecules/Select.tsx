@@ -1,4 +1,4 @@
-import { Button, Label, ListBox, ListBoxItem, Popover, Select, SelectValue } from 'react-aria-components'
+import { Button as RAButton, Label as RALabel, ListBox as RAListBox, ListBoxItem as RAListBoxItem, Popover as RAPopover, Select as RASelect, SelectValue as RASelectValue } from 'react-aria-components'
 
 import { styled } from 'styled-components'
 
@@ -7,35 +7,35 @@ type SelectProps = {
     options: string[]
 }
 
-export function CustomSelect({ label, options }: SelectProps) {
+export function Select({ label, options }: SelectProps) {
     return (
         <StyledSelect>
-            <Label>{label}</Label>
+            <RALabel>{label}</RALabel>
 
             <StyledButton>
-                <SelectValue />
+                <RASelectValue />
                 <span aria-hidden="true">▼</span>
             </StyledButton>
 
-            <Popover>
-                <ListBox>
+            <RAPopover>
+                <RAListBox>
                     {options.map((option) => (
                         <StyledListBoxItem key={option}>{option}</StyledListBoxItem>
                     ))}
-                </ListBox>
-            </Popover>
+                </RAListBox>
+            </RAPopover>
         </StyledSelect>
     )
 }
 
-const StyledSelect = styled(Select)`
+const StyledSelect = styled(RASelect)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
 `
 
-const StyledButton = styled(Button)`
+const StyledButton = styled(RAButton)`
     display: flex;
     gap: 1em;
 
@@ -47,6 +47,6 @@ const StyledButton = styled(Button)`
     cursor: pointer;
 `
 
-const StyledListBoxItem = styled(ListBoxItem)`
+const StyledListBoxItem = styled(RAListBoxItem)`
   padding: 0.3em 1.2em
 `

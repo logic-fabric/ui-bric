@@ -1,14 +1,14 @@
 import { useRef } from 'react'
 import { useButton } from 'react-aria'
-import type { ButtonProps } from 'react-aria-components'
+import type { ButtonProps as RAButtonProps} from 'react-aria-components'
 
 import styled from 'styled-components'
 
-type CustomButtonProps = ButtonProps & {
+type ButtonProps = RAButtonProps & {
     children: React.ReactNode
 }
 
-export function CustomButton(props: CustomButtonProps) {
+export function Button(props: ButtonProps) {
     const ref = useRef(null)
     const { buttonProps, isPressed } = useButton(props, ref)
 
