@@ -13,13 +13,13 @@ export function CustomButton(props: CustomButtonProps) {
     const { buttonProps, isPressed } = useButton(props, ref)
 
     return (
-        <StyledButton {...buttonProps} ref={ref} isPressed={isPressed}>
+        <StyledButton {...buttonProps} ref={ref} $isPressed={isPressed}>
             {props.children}
         </StyledButton>
     )
 }
 
-const StyledButton = styled.button<{ isPressed: boolean }>`
+const StyledButton = styled.button<{ $isPressed: boolean }>`
     display: flex;
     gap: 1em;
 
@@ -27,6 +27,6 @@ const StyledButton = styled.button<{ isPressed: boolean }>`
     padding: 0.5em 1em;
     border-radius: 4px;
 
-    background-color: ${({ isPressed }) => isPressed ? "#ccc" : "#eee"};
+    background-color: ${({ $isPressed }) => $isPressed ? "#ccc" : "#eee"};
     cursor: pointer;
 `

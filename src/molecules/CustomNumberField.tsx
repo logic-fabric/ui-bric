@@ -6,11 +6,9 @@ import { CustomButton } from "../atoms/CustomButton"
 
 import styled from "styled-components"
 
-type NumberFieldProps = Parameters<typeof useNumberField>[0] & {
-    label: string,
-}
+type NumberFieldProps = Parameters<typeof useNumberField>[0]
 
-export function CustomNumberField({ label, ...props }: NumberFieldProps) {
+export function CustomNumberField(props: NumberFieldProps) {
     const inputRef = useRef(null)
     const { locale } = useLocale()
     const state = useNumberFieldState({
@@ -27,7 +25,7 @@ export function CustomNumberField({ label, ...props }: NumberFieldProps) {
 
     return (
         <StyledNumberFieldContainer>
-            <label {...labelProps}>{label}</label>
+            <label {...labelProps} >{props.label}</label>
 
             <StyledInputContainer {...groupProps}>
                 <CustomButton {...decrementButtonProps}>-</CustomButton>
