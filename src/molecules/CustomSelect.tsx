@@ -1,6 +1,4 @@
-import { Label, ListBox, ListBoxItem, Popover, Select, SelectValue } from 'react-aria-components'
-
-import { CustomButton } from '../atoms/CustomButton'
+import { Button, Label, ListBox, ListBoxItem, Popover, Select, SelectValue } from 'react-aria-components'
 
 import { styled } from 'styled-components'
 
@@ -14,10 +12,10 @@ export function CustomSelect({ label, options }: SelectProps) {
         <StyledSelect>
             <Label>{label}</Label>
 
-            <CustomButton>
+            <StyledButton>
                 <SelectValue />
                 <span aria-hidden="true">▼</span>
-            </CustomButton>
+            </StyledButton>
 
             <Popover>
                 <ListBox>
@@ -35,6 +33,18 @@ const StyledSelect = styled(Select)`
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
+`
+
+const StyledButton = styled(Button)`
+    display: flex;
+    gap: 1em;
+
+    width: fit-content;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+
+    background-color: #eee;
+    cursor: pointer;
 `
 
 const StyledListBoxItem = styled(ListBoxItem)`
